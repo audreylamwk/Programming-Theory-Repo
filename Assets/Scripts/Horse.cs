@@ -2,20 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Chicken : Animals
+public class Horse : Animals
 {
-    // Start is called before the first frame update
     public override void Jump()
     {
         rb = GetComponent<Rigidbody>();
         rb.AddForce(Vector3.up * 5, ForceMode.Impulse);
+        rb.AddForce(Vector3.forward * 3, ForceMode.Impulse);
 
     }
 
 
     void Start()
     {
-        InvokeRepeating("Jump", 1.0f, 2.0f);
+        Jump();
     }
     void Update()
     {
